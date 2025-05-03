@@ -1,6 +1,6 @@
-# NestJS [REPLACE_ME]
+# nest-sensitive
 
-[![npm version](https://img.shields.io/npm/v/@furkanogutcu/nest-replace-me.svg)](https://www.npmjs.com/package/@furkanogutcu/nest-replace-me)
+[![npm version](https://img.shields.io/npm/v/@furkanogutcu/nest-sensitive.svg)](https://www.npmjs.com/package/@furkanogutcu/nest-sensitive)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu diam elit.
@@ -16,13 +16,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu diam elit.
 ## Installation
 
 ```bash
-npm install @furkanogutcu/nest-replace-me
+npm install @furkanogutcu/nest-sensitive
 ```
 
 or
 
 ```bash
-yarn add @furkanogutcu/nest-replace-me
+yarn add @furkanogutcu/nest-sensitive
 ```
 
 ## Features
@@ -35,7 +35,7 @@ yarn add @furkanogutcu/nest-replace-me
 ### Basic Example
 
 ```typescript
-import { YourModule } from '@furkanogutcu/nest-replace-me';
+import { YourModule } from '@furkanogutcu/nest-sensitive';
 ```
 
 ## Development
@@ -50,13 +50,13 @@ import { YourModule } from '@furkanogutcu/nest-replace-me';
 Clone the project
 
 ```bash
-  git clone https://github.com/furkanogutcu/nest-replace-me.git
+  git clone https://github.com/furkanogutcu/nest-sensitive.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd nest-replace-me
+  cd nest-sensitive
 ```
 
 Install dependencies

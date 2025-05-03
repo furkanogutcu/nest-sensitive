@@ -1,7 +1,7 @@
 {
-  "name": "@furkanogutcu/nest-replace-me",
+  "name": "@furkanogutcu/nest-sensitive",
   "version": "0.0.1",
-  "description": "",
+  "description": "Secure encryption and decryption module for sensitive data in NestJS applications.",
   "author": "Furkan Ogutcu",
   "license": "MIT",
   "readme": "README.md",
@@ -38,12 +38,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/furkanogutcu/nest-replace-me.git"
+    "url": "git+https://github.com/furkanogutcu/nest-sensitive.git"
   },
   "bugs": {
-    "url": "https://github.com/furkanogutcu/nest-replace-me/issues"
+    "url": "https://github.com/furkanogutcu/nest-sensitive/issues"
   },
-  "homepage": "https://github.com/furkanogutcu/nest-replace-me#readme",
+  "homepage": "https://github.com/furkanogutcu/nest-sensitive#readme",
   "peerDependencies": {
     "@nestjs/common": "^11.1.0",
     "@nestjs/core": "^11.1.0",
@@ -92,7 +92,7 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
+    "coverageDirectory": "./coverage",
     "testEnvironment": "node"
   }
 }
