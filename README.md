@@ -30,6 +30,7 @@ yarn add @furkanogutcu/nest-sensitive
 - Simple AES-256-GCM encryption and decryption for sensitive data
 - Easy to integrate with NestJS applications
 - Support for both synchronous and asynchronous module registration
+- Global module registration support
 - Securely encrypt and decrypt any serializable data
 
 ## Usage
@@ -44,6 +45,7 @@ import { SensitiveModule, SensitiveService } from '@furkanogutcu/nest-sensitive'
   imports: [
     SensitiveModule.register({
       encryptionKey: 'your-32-character-encryption-key', // Must be 32 characters (256 bits)
+      isGlobal: true, // Optional: Makes the module global so you don't need to import it in other modules
     }),
   ],
 })
@@ -66,6 +68,7 @@ import { SensitiveModule } from '@furkanogutcu/nest-sensitive';
       useFactory: (configService: ConfigService) => ({
         encryptionKey: configService.get<string>('ENCRYPTION_KEY'),
       }),
+      isGlobal: true, // Optional: Makes the module global so you don't need to import it in other modules
     }),
   ],
 })

@@ -18,6 +18,7 @@ export class SensitiveModule {
         SensitiveService,
       ],
       exports: [SensitiveService],
+      global: options.isGlobal,
     };
   }
 
@@ -27,6 +28,7 @@ export class SensitiveModule {
       imports: options.imports || [],
       providers: [...this.createAsyncProviders(options), SensitiveService],
       exports: [SensitiveService],
+      global: options.isGlobal,
     };
   }
 
