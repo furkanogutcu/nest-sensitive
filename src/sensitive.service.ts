@@ -20,13 +20,16 @@ export class SensitiveService {
       throw new AppInternalException({ message: 'Input cannot be null or undefined' });
     }
 
+    const type = typeof input;
+    const payload = { t: type, v: input };
+
     const iv = crypto.randomBytes(this.ivLength);
     const cipher = crypto.createCipheriv(this.algorithm, this.secretKey, iv, {
       authTagLength: 16,
     });
 
     const encryptedText = Buffer.concat([
-      cipher.update(JSON.stringify(input)),
+      cipher.update(JSON.stringify(payload)),
       cipher.final(),
       cipher.getAuthTag(),
     ]).toString('hex');
@@ -34,7 +37,7 @@ export class SensitiveService {
     return iv.toString('hex') + ':' + encryptedText;
   }
 
-  decrypt(input: string): string {
+  decrypt(input: string): any {
     if (!input || input.length === 0) return '';
 
     const [ivHex, dataHex] = input.split(':');
@@ -56,7 +59,25 @@ export class SensitiveService {
     decipher.setAuthTag(authTagBuff);
 
     const decrypted = Buffer.concat([decipher.update(encTextBuff), decipher.final()]);
+    const decryptedStr = decrypted.toString();
 
-    return decrypted.toString();
+    let parsed: { t: string; v: any } = JSON.parse(decryptedStr);
+
+    if (!parsed.t || !parsed.v) {
+      throw new AppInternalException({ message: 'Invalid encrypted data.' });
+    }
+
+    switch (parsed.t) {
+      case 'number':
+        return Number(parsed.v);
+      case 'boolean':
+        return Boolean(parsed.v);
+      case 'object':
+        return parsed.v;
+      case 'string':
+        return String(parsed.v);
+      default:
+        return parsed.v;
+    }
   }
 }
