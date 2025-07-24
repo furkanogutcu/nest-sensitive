@@ -1,6 +1,6 @@
 {
   "name": "@furkanogutcu/nest-sensitive",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Secure encryption and decryption module for sensitive data in NestJS applications.",
   "author": "Furkan Ogutcu",
   "license": "MIT",
